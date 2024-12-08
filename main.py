@@ -108,3 +108,29 @@ print(next(gen)**2)
 print(next(gen)**2)
 print(next(gen)**2)
 print(next(gen)**2)
+
+#Или просто сделать yield i ** 2
+
+print("------------------------------------------------------")
+print("Decorators")
+print("------------------------------------------------------")
+
+#Decorators Функция которая добавляет функциональность к другим функциям без их изменений
+
+def decorator(func):
+    def wrapper():
+        print("Это до вызова функции")
+        func()
+        print("Это после вызова функции")
+    return wrapper()
+
+@decorator
+def say_hello():
+    print("Привет")
+
+@decorator
+def add():
+    print(5+5)
+
+say_hello()
+add()
